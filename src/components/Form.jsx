@@ -95,7 +95,8 @@ export default function Form() {
       }
       const data = { ...formData, rows: rows };
       const res = await axios.post(`${BASE_URL}/form`, data);
-      dispatch(handleOpen({ message: res.data.message, severity: "success" }));
+      console.log(res.data);
+      dispatch(handleOpen({ message: res.data, severity: "success" }));
     } catch (error) {
       console.log(error);
     }
